@@ -15,51 +15,59 @@ public class megaSena {
     int winNumber = random.nextInt(99) + 1;
      if (!winNumbers.contains(winNumber))  {
          winNumbers.add(winNumber);
-break;
+         break;
 }
 }   
 }  
-  System.out.println("Por favor, digite 7 números entre 1 e 100\n");
+  System.out.println("Por favor, digite 7 números entre 1 e 100");
   Scanner sc = new Scanner(System.in);
   
   List<Integer> selectedNumbers = new ArrayList<>();
   for (int i=0; i<7; i++) {
-	  System.out.println("Você já selecionou: " + selectedNumbers);
+	//System.out.println("Gabarito para testes: " + winNumbers);
+	  System.out.println("\nVocê já selecionou: " + selectedNumbers);
 	  System.out.println("Escolha um número entre 1 e 100: ");
 	  
  
 while (true) {
 	
- 
    try {
-   String stringN = sc.nextLine();
-   int number = Integer.parseInt(stringN);
-   if(number >= 1 && number <= 99) {
+   String stringNumber = sc.nextLine();
+   int number = Integer.parseInt(stringNumber);
+   if ((number >= 1 && number <= 100) && (!selectedNumbers.contains(number))) {
    selectedNumbers.add(number);
+   
  break;
-  }
-  
-  else {
-	  System.out.println(number + " não está entre 1 e 100, tente novamente.");
+ 
+   } else {
+   	  System.out.println(number + " não está entre 1 e 100 ou já foi selecioando, tente novamente.");
 }
-  
    }
   catch (NumberFormatException noNumber) {
 	  System.out.println("Isso não é um número! Tente novamente.");
   }
 }
 }
-  System.out.println("Os números sorteados eram: " + winNumbers);
-  System.out.println("Você escolheu: " + selectedNumbers);
+  System.out.println("-------------------------------------------------------------\n");
+  System.out.println("  Os números sorteados eram: " + winNumbers);
+  System.out.println("  Você escolheu: " + selectedNumbers);
   selectedNumbers.retainAll(winNumbers); {
-  System.out.println("Você acertou esses números: " + selectedNumbers);
+  System.out.println("  Você acertou esse(s) número(s): " + selectedNumbers);
+  System.out.println("\n-------------------------------------------------------------");
   
-   if (selectedNumbers.retainAll(winNumbers)) {
-	  System.out.println("Wow! Você realmente conseguiu? Meus parabéns!");
-  }else {
-	  System.out.println("Vish, mais sorte da próxima vez...");
+  int count = 0;
+  for (Integer n : selectedNumbers) if (winNumbers.contains(n)) count++;
+     if (count < 5) {
+	  System.out.println("\nVocê não conseguiu nenhum prêmio, mais sorte da próxima vez.");
+  } else if (count == 5) {
+	  System.out.println("\nParabéns! Você acaba de ganhar 10 mil reais!");
+  }else  if (count == 6) {
+	  System.out.println("\nParabéns! Você acaba de ganhar 50 mil reais!");
+  } else  if (count == 7) {
+	  System.out.println("\nInacreditável! Você acertou todos os números e acaba de ganhar 200 mil reais!");
   }
-    }
-  sc.close();
-  	}
-	}
+   sc.close();
+}
+}
+}
+  	
