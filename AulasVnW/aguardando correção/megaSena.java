@@ -1,73 +1,60 @@
-package br.com.vainaweb.backendt3.introduction; 
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+package br.com.vainaweb.backendt3.introduction;  //Tentando fazer
+import java.lang.Math;
 import java.util.Scanner;
+//import java.util.Arrays;
+
 
 public class megaSena {
-	public static void main(String[] args) {
-	
-	List<Integer> winNumbers = new ArrayList<>();
-    Random random = new Random();
-    for (int i = 0; i < 7; i++) {
-    while (true) {
-    int winNumber = random.nextInt(99) + 1;
-     if (!winNumbers.contains(winNumber))  {
-         winNumbers.add(winNumber);
-         break;
-}
-}   
-}  
-  System.out.println("Por favor, digite 7 números entre 1 e 100");
-  Scanner sc = new Scanner(System.in);
-  
-  List<Integer> selectedNumbers = new ArrayList<>();
-  for (int i=0; i<7; i++) {
-	//System.out.println("Gabarito para testes: " + winNumbers);
-	  System.out.println("\nVocê já selecionou: " + selectedNumbers);
-	  System.out.println("Escolha um número entre 1 e 100: ");
-	  
- 
-while (true) {
-	
-   try {
-   String stringNumber = sc.nextLine();
-   int number = Integer.parseInt(stringNumber);
-   if ((number >= 1 && number <= 100) && (!selectedNumbers.contains(number))) {
-   selectedNumbers.add(number);
-   
- break;
- 
-   } else {
-   	  System.out.println(number + " não está entre 1 e 100 ou já foi selecionado, tente novamente.");
-}
-   }
-  catch (NumberFormatException noNumber) {
-	  System.out.println("Isso não é um número! Tente novamente.");
-  }
-}
-}
-  System.out.println("-------------------------------------------------------------\n");
-  System.out.println("  Os números sorteados eram: " + winNumbers);
-  System.out.println("  Você escolheu: " + selectedNumbers);
-  selectedNumbers.retainAll(winNumbers); {
-  System.out.println("  Você acertou esse(s) número(s): " + selectedNumbers);
-  System.out.println("\n-------------------------------------------------------------");
-  
-  int count = 0;
-  for (Integer n : selectedNumbers) if (winNumbers.contains(n)) count++;
-     if (count < 5) {
-	  System.out.println("\nVocê não conseguiu nenhum prêmio, mais sorte da próxima vez.");
-  } else if (count == 5) {
-	  System.out.println("\nParabéns! Você acaba de ganhar 10 mil reais!");
-  }else  if (count == 6) {
-	  System.out.println("\nParabéns! Você acaba de ganhar 50 mil reais!");
-  } else  if (count == 7) {
-	  System.out.println("\nInacreditável! Você acertou todos os números e acaba de ganhar 200 mil reais!");
-  }
-   sc.close();
+public static void main(String[] args) {
+	 
+int r1 = (int)(Math.random() * 100 ) + 1;  
+int r2 = (int)(Math.random() * 100 ) + 1;  
+int r3 = (int)(Math.random() * 100 ) + 1;  
+int r4 = (int)(Math.random() * 100 ) + 1;  
+int r5 = (int)(Math.random() * 100 ) + 1;  
+int r6 = (int)(Math.random() * 100 ) + 1;  
+int r7 = (int)(Math.random() * 100 ) + 1;
+
+
+int random[] = {r1, r2, r3, r4, r5, r6, r7};
+//System.out.println(Arrays.toString(random));
+		
+Scanner sc = new Scanner(System.in);
+System.out.println("Digite seis valores entre 0 e 100!\n");
+
+System.out.print("Digite o primeiro número: ");
+String primeiro = sc.next();
+
+System.out.print("Digite o segundo número: ");
+String segundo = sc.next();
+
+System.out.print("Digite o terceiro número: ");
+String terceiro = sc.next();
+
+System.out.print("Digite o quarto número: ");
+String quarto = sc.next();
+
+System.out.print("Digite o quinto número: ");
+String quinto = sc.next();
+
+System.out.print("Digite o sexto número: ");
+String sexto = sc.next();
+
+System.out.print("Digite o sétimo número: ");
+String setimo = sc.next();
+
+int n1 = Integer.parseInt(primeiro);
+int n2 = Integer.parseInt(segundo);
+int n3 = Integer.parseInt(terceiro);
+int n4 = Integer.parseInt(quarto);
+int n5 = Integer.parseInt(quinto);
+int n6 = Integer.parseInt(sexto);
+int n7 = Integer.parseInt(setimo);
+
+int selected[] = {n1, n2, n3, n4, n5, n6, n7};
+//System.out.println(Arrays.toString(selected));
+sc.close();
 }
 }
-}
-  	
+    
+

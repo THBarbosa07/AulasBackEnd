@@ -7,8 +7,8 @@ public static void main(String[] args) {
 	 Scanner sc = new Scanner (System.in);
 	 	 
 	 try {
-			int nome = Integer.parseInt("Thiago");
-			System.err.println(nome);
+			int idade = Integer.parseInt("19");
+			System.err.println(idade);
 		}catch(NumberFormatException e) {
 			System.err.println(e.getMessage());
 		}

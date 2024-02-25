@@ -40,7 +40,7 @@ while (true) {
  break;
  
    } else {
-   	  System.out.println(number + " não está entre 1 e 100 ou já foi selecionado, tente novamente.");
+   	  System.out.println(number + " não está entre 1 e 100 ou já foi selecioando, tente novamente.");
 }
    }
   catch (NumberFormatException noNumber) {
